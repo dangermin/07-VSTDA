@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+<title>2Do List</title>
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+ <!-- Style Sheet -->
+ <link rel="stylesheet" type="text/css" href="style.css">
+
+ <!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+</head>
+
+<body ng-controller="todoCtrl">
+
+<div class="container">
+<!-- input column -->
+	<div id="col-1" class="col-xs-12 col-sm-4">
+		<form class="todoInputForm" role="form">
+			<div class="form-group" id="todoEntry" >
+				<h3>Add Todo Item</h3>
+				<label class="todoEntry" for="todoEntry">Enter Todo</label>
+				<br>
+			<!-- Binding ng-model -->
+				<input type="text" class="form-control" id="addTask" ng-model="newTodo.text" placeholder="Enter Task"/>
+		    </div> <!-- /.todo Entry -->
+				
+	        <div class="form-group" id="todoPriority">
+	        	<label for="todoPriority">Priority</label>
+	        	<br>
+	        	<select class="todoPriority"  ng-model="newTodo.priority">
+	        		<option value="1">Low</option>
+	        		<option value="2">Med</option>
+	        		<option value="3">High</option>
+	        	</select>
+	        	<button class="btn btn-primary" ng-click="addTodo()">Add Todo</button>
+	        </div> <!-- /.todo Priority -->
+	    </form>   		
+	</div>
+<!-- TODO OutPut Column -->
+	<div id="col-2" class="col-xs-12 col-sm-8">
+		<h4>Prioritize
+		<div class="btn-group" role="group">
+			<button type="button" class="btn btn-primary" ng-click="sortField = 'priority'">By Highest Order</button>
+			<button type="button" class="btn btn-primary" ng-click="sortField = '-priority'">By Lowest Order</button>
+			<button type="button" class="btn btn-primary" ng-click="sortField = 'text'">Aphabetically</button>
+		</div> 
+		</h4> <!-- /. Priority Select -->
+		<table class="table">
+			<thead>
+				<tbody>
+					<tr ng-repeat="todo in todos | orderBy: sortField " ng-class="getTodoClass(todo)">
+						<td >
+							<span>{{todo.text}}</span>
+						</td>
+					</tr>
+				</tbody>
+			</thead>
+		</table>
+		
+	</div> <!-- /.todo Output Col-->
+</div>
+
+<!-- jQuery -->
+	<script src="//code.jquery.com/jquery.js"></script>
+<!-- Bootstrap JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<!-- Angular -->
+	<!-- <script type="text/javascript" src="bower_components/angular/angular.js"></script>	 -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.js"></script>
+ <!-- JavaScript -->
+ 	<script src="script.js"></script>
+
+
+</body>
+<html>

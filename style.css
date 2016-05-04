@@ -1,0 +1,24 @@
+body {
+	background-image: url("https://pixabay.com/static/uploads/photo/2015/05/01/23/44/to-do-list-749304_960_720.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+    margin-top: 25px;;
+}
+
+.container {
+	padding-top: 13%;
+}
+
+#col-1, #col-2{
+	background-color: white;
+	border: 2px solid lightblue;
+	border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+
+.search, .info {
+    border: 2px solid lightblue;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}

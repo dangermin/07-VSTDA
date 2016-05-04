@@ -1,0 +1,25 @@
+{
+  "name": "07-VSTDA",
+  "authors": [
+    "dangermin <dangermin.field@gmail.com>"
+  ],
+  "description": "ToDoList",
+  "main": "",
+  "keywords": [
+    "list",
+    "task"
+  ],
+  "license": "MIT",
+  "homepage": "index.html",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.5"
+  }
+}
